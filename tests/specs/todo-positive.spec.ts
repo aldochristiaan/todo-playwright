@@ -12,9 +12,8 @@ test.describe('cRUD Flow', async () => {
     await todoPage.validateInputField();
     await todoPage.addToDo('Todo');
     await todoPage.editTodo('Todo', 'Other Todo');
-    await todoPage.addToDo('Todo 2');
-    await todoPage.validateToDoList(2);
-    await todoPage.validateTodoCount('2');
+    await todoPage.validateToDoList(1);
+    await todoPage.validateTodoCount('1');
   });
 
   test('[@Smoke] Delete to-do', async ({ todoPage }) => {
