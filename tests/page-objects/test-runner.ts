@@ -7,8 +7,11 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
   todoPage: async ({ page }, use) => {
-    await use(new TodoPage(page));
-  }
+    const toDoPage = new TodoPage(page);
+    await toDoPage.open();
+    await toDoPage.toBeOpened();
+    await use(toDoPage);
+  },
 });
 
 export { expect } from '@playwright/test';
